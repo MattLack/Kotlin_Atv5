@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginTop="80dp" app:layout_constraintTop_toTopOf="parent" android:text="Insira um valor:"
+            android:textSize="24sp" android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/txt_valor" app:layout_constraintVertical_bias="0.0"/>
+    <EditText
+            android:layout_width="160dp"
+            android:layout_height="48dp"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/txt_valor" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.497" android:layout_marginTop="9dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView" android:layout_marginBottom="44dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView2" android:textAlignment="center"/>
+    <TextView
+            android:text="Escolha a moeda:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginTop="44dp" app:layout_constraintTop_toBottomOf="@+id/txt_valor"
+            android:textSize="24sp"
+            app:layout_constraintHorizontal_bias="0.485" android:textAlignment="center"/>
+    <RadioGroup
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="36dp"
+            android:id="@+id/radGroupBase"
+            android:layout_marginBottom="100dp" app:layout_constraintBottom_toTopOf="@+id/btn_convert">
+        <RadioButton
+                android:text="BRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/BRL_b" android:layout_weight="1"/>
+        <RadioButton
+                android:text="USD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/USD_b" android:layout_weight="1"/>
+        <RadioButton
+                android:text="GBP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/GBP_b" android:layout_weight="1"/>
+        <RadioButton
+                android:text="HRK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/HRK_b" android:layout_weight="1"/>
+    </RadioGroup>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="80dp" android:layout_marginTop="53dp"
+            app:layout_constraintTop_toBottomOf="@+id/btn_convert">
+        <TextView
+                android:text="Valor final:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" tools:layout_editor_absoluteY="596dp"
+                tools:layout_editor_absoluteX="125dp"
+                android:layout_weight="1"
+                android:id="@+id/textView3" android:textSize="24sp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/txtFinalValue" android:layout_weight="1"
+                android:textSize="24sp"/>
+    </LinearLayout>
+    <Button
+            android:text="Converter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_convert"
+            android:onClick="get" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:layout_marginTop="92dp"
+            app:layout_constraintTop_toBottomOf="@+id/radGroupConvert" app:layout_constraintHorizontal_bias="0.457"/>
+    <RadioGroup
+            android:layout_width="88dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toEndOf="@+id/radGroupBase" android:layout_marginStart="8dp"
+            android:layout_marginTop="56dp" app:layout_constraintTop_toBottomOf="@+id/textView2"
+            android:id="@+id/radGroupConvert" app:layout_constraintHorizontal_bias="0.521"
+    >
+        <RadioButton
+                android:text="PLN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/PLN_c" android:layout_weight="1"/>
+        <RadioButton
+                android:text="HUF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/HUF_c" android:layout_weight="1"/>
+        <RadioButton
+                android:text="BGN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/BGN_c" android:layout_weight="1"/>
+        <RadioButton
+                android:text="JPY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/JPY_c" android:layout_weight="1"/>
+    </RadioGroup>
+    <TextView
+            android:text="base"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView5" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/textView6" android:layout_marginEnd="8dp"
+            android:layout_marginTop="24dp" app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.326" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/radGroupBase"/>
+    <TextView
+            android:text="a converter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView6" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="76dp"
+            android:layout_marginTop="24dp" app:layout_constraintTop_toBottomOf="@+id/textView2"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/radGroupConvert"
+            app:layout_constraintVertical_bias="1.0"/>
+</android.support.constraint.ConstraintLayout>
